@@ -18,6 +18,9 @@ before_script:
   - git checkout $NETCOMMONS_VERSION
   - curl -s http://getcomposer.org/installer | php
   - php composer.phar install
+  - ls -al ../$PLUGIN_NAME
+  - ls -al ../$PLUGIN_NAME/.git/objects/pack/
+  - ls -al plugins
   - cp -r ../$PLUGIN_NAME plugins
   - cp -r ../$PLUGIN_NAME app/Plugin/
   - chmod -R 777 app/tmp
