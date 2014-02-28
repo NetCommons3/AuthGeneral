@@ -21,6 +21,8 @@ before_script:
   - ls -al ../$PLUGIN_NAME
   - ls -al ../$PLUGIN_NAME/.git/objects/pack/
   - ls -al plugins
+  - ls -al plugins/AuthGeneral/.git/objects/pack
+  - touch plugins/AuthGeneral/.git/objects/pack/test
   - cp -r ../$PLUGIN_NAME plugins
   - cp -r ../$PLUGIN_NAME app/Plugin/
   - chmod -R 777 app/tmp
