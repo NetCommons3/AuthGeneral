@@ -47,17 +47,6 @@ class AuthGeneralControllerTest extends ControllerTestCase {
 	}
 
 /**
- * testIndex action
- *
- * @author   Jun Nishikawa <topaz2@m0n0m0n0.com>
- * @return   void
- */
-	public function testIndex() {
-		$this->testAction('/auth/index');
-		$this->assertEqual($this->headers['Location'], Router::url('/auth/login', true));
-	}
-
-/**
  * authUserCallback
  *
  * @author   Jun Nishikawa <topaz2@m0n0m0n0.com>
@@ -73,6 +62,17 @@ class AuthGeneralControllerTest extends ControllerTestCase {
 			return $auth;
 		}
 		return $auth[$key];
+	}
+
+/**
+ * testIndex action
+ *
+ * @author   Jun Nishikawa <topaz2@m0n0m0n0.com>
+ * @return   void
+ */
+	public function testIndex() {
+		$this->testAction('/auth/index');
+		$this->assertEqual($this->headers['Location'], Router::url('/auth/login', true));
 	}
 
 /**
