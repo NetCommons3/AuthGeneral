@@ -1,17 +1,17 @@
 <?php
 /**
- * AuthGeneralController Test Case
- *
- * @author   Jun Nishikawa <topaz2@m0n0m0n0.com>
- * @link     http://www.netcommons.org NetCommons Project
- * @license  http://www.netcommons.org/license.txt NetCommons License
+ * Summary for AuthGeneralController Test Case
  */
 
 App::uses('AuthGeneralController', 'Controller');
 App::uses('AuthComponent', 'Controller/Component');
 
 /**
- * Summary for AuthGeneralController Test Case
+ * AuthGeneralController Test Case
+ *
+ * @author   Jun Nishikawa <topaz2@m0n0m0n0.com>
+ * @link     http://www.netcommons.org NetCommons Project
+ * @license  http://www.netcommons.org/license.txt NetCommons License
  */
 class AuthGeneralControllerTest extends ControllerTestCase {
 
@@ -50,7 +50,7 @@ class AuthGeneralControllerTest extends ControllerTestCase {
  * authUserCallback
  *
  * @author   Jun Nishikawa <topaz2@m0n0m0n0.com>
- * @param    type $key
+ * @param    int $key
  * @return   mixed
  */
 	public function authUserCallback($key) {
