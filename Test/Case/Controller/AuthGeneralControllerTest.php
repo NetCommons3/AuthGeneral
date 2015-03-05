@@ -108,4 +108,17 @@ class AuthGeneralControllerTest extends ControllerTestCase {
 		$this->assertEqual($this->headers['Location'], Router::url('/auth/login', true));
 		/* $this->assertFalse($this->controller->Auth->loggedIn()); */
 	}
+
+/**
+ * Call logout action
+ *
+ * @param CakeTestCase $test CakeTestCase instance
+ * @return void
+ */
+	public static function logout($test) {
+		/* $test->testAction('/auth_general/auth_general/logout', array( */
+		/* 	'data' => array( */
+		/* 	), */
+		/* )); */
+	}
 }
