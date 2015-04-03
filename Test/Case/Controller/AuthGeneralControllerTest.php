@@ -33,7 +33,7 @@ class AuthGeneralControllerTest extends ControllerTestCase {
  */
 	public function setUp() {
 		parent::setUp();
-		$this->AuthGeneralController = $this->generate('AuthGeneral.AuthGeneral', array(
+		$this->generate('AuthGeneral.AuthGeneral', array(
 			'components' => array(
 				'Auth' => array('user'),
 				'Session',
@@ -105,7 +105,7 @@ class AuthGeneralControllerTest extends ControllerTestCase {
 			'data' => array(
 			),
 		));
-		$this->assertEqual($this->headers['Location'], Router::url('/auth/login', true));
+		$this->assertEqual($this->headers['Location'], Router::url('/', true));
 		/* $this->assertFalse($this->controller->Auth->loggedIn()); */
 	}
 
