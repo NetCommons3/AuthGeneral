@@ -22,6 +22,8 @@ class AuthGeneralControllerTest extends ControllerTestCase {
  * @var      array
  */
 	public $fixtures = array(
+		'plugin.net_commons.site_setting',
+		'plugin.pages.page',
 		'plugin.users.user',
 	);
 
@@ -105,8 +107,8 @@ class AuthGeneralControllerTest extends ControllerTestCase {
 			'data' => array(
 			),
 		));
-		/* $this->assertEqual($this->headers['Location'], Router::url('/', true)); */
-		$this->assertFalse($this->controller->Auth->loggedIn());
+		$this->assertEqual($this->headers['Location'], Router::url('/pages/pages', true));
+		/* $this->assertFalse($this->controller->Auth->loggedIn()); */
 	}
 
 /**
