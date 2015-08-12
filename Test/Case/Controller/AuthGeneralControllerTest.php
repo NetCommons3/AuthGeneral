@@ -109,7 +109,7 @@ class AuthGeneralControllerTest extends ControllerTestCase {
 			'data' => array(
 			),
 		));
-		$this->assertEqual($this->headers['Location'], Router::url('/setting', true));
+		$this->assertEqual($this->headers['Location'], Router::url('/', true));
 		/* $this->assertFalse($this->controller->Auth->loggedIn()); */
 	}
 
