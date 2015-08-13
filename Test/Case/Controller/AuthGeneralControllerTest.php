@@ -5,6 +5,7 @@
 
 App::uses('AuthGeneralController', 'Controller');
 App::uses('AuthComponent', 'Controller/Component');
+App::uses('YAControllerTestCase', 'NetCommons.TestSuite');
 
 /**
  * AuthGeneralController Test Case
@@ -13,7 +14,7 @@ App::uses('AuthComponent', 'Controller/Component');
  * @link     http://www.netcommons.org NetCommons Project
  * @license  http://www.netcommons.org/license.txt NetCommons License
  */
-class AuthGeneralControllerTest extends ControllerTestCase {
+class AuthGeneralControllerTest extends YAControllerTestCase {
 
 /**
  * Fixtures
@@ -21,13 +22,7 @@ class AuthGeneralControllerTest extends ControllerTestCase {
  * @author   Jun Nishikawa <topaz2@m0n0m0n0.com>
  * @var      array
  */
-	public $fixtures = array(
-		'plugin.m17n.language',
-		'plugin.net_commons.site_setting',
-		'plugin.pages.page',
-		'plugin.roles.role',
-		'plugin.users.user',
-	);
+	public $fixtures = array();
 
 /**
  * setUp
