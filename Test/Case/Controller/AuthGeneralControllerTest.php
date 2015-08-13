@@ -100,12 +100,13 @@ class AuthGeneralControllerTest extends YAControllerTestCase {
  * @return   void
  */
 	public function testLogout() {
+		$this->testLogin();
+
 		$this->testAction('/auth_general/auth_general/logout', array(
 			'data' => array(
 			),
 		));
-		$this->assertEqual($this->headers['Location'], Router::url('/', true));
-		/* $this->assertFalse($this->controller->Auth->loggedIn()); */
+		$this->assertEqual(null, CakeSession::read('Auth.User'));
 	}
 
 /**
