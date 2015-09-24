@@ -111,6 +111,7 @@ class AuthGeneralControllerTest extends YAControllerTestCase {
 
 /**
  * Call logout action
+ * 後で削除
  *
  * @param CakeTestCase $test CakeTestCase instance
  * @return void
