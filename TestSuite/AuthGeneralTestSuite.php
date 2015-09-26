@@ -17,6 +17,7 @@ App::uses('NetCommonsControllerTestCase', 'NetCommons.TestSuite');
  *
  * @author Shohei Nakajima <nakajimashouhei@gmail.com>
  * @package NetCommons\AuthGeneral\TestSuite
+ * @codeCoverageIgnore
  */
 class AuthGeneralTestSuite {
 
@@ -70,11 +71,6 @@ class AuthGeneralTestSuite {
  * @return void
  */
 	public static function logout($test) {
-		/* $test->testAction('/auth_general/auth_general/logout', array( */
-		/* 	'data' => array( */
-		/* 	), */
-		/* )); */
-
 		CakeSession::write('Auth.User', null);
 	}
 
