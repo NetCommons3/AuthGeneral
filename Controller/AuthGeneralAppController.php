@@ -17,5 +17,5 @@ App::uses('AuthController', 'Auth.Controller');
  * @package NetCommons\AuthGeneral\Controller
  */
 class AuthGeneralAppController extends AuthController {
-	
+
 }
