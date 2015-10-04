@@ -35,7 +35,7 @@ class AuthGeneralControllerTest extends NetCommonsControllerTestCase {
  *
  * @var array
  */
-	protected $_plugin = 'auth_general';
+	public $plugin = 'auth_general';
 
 /**
  * Controller name
