@@ -1,6 +1,6 @@
 <?php
 /**
- * AuthGeneralTestSuite
+ * TestAuthGeneral
  *
  * @author Shohei Nakajima <nakajimashouhei@gmail.com>
  * @link http://www.netcommons.org NetCommons Project
@@ -13,13 +13,13 @@ App::uses('AuthComponent', 'Controller/Component');
 App::uses('NetCommonsControllerTestCase', 'NetCommons.TestSuite');
 
 /**
- * AuthGeneralTestSuite
+ * TestAuthGeneral
  *
  * @author Shohei Nakajima <nakajimashouhei@gmail.com>
  * @package NetCommons\AuthGeneral\TestSuite
  * @codeCoverageIgnore
  */
-class AuthGeneralTestSuite {
+class TestAuthGeneral {
 
 /**
  * Roles data for testing
