@@ -51,6 +51,7 @@ class AuthGeneralControllerTest extends NetCommonsControllerTestCase {
  */
 	public function setUp() {
 		parent::setUp();
+		$this->generateNc('AuthGeneral.AuthGeneral');
 
 		$this->controller->plugin = 'AuthGeneral';
 		$this->controller->Auth
