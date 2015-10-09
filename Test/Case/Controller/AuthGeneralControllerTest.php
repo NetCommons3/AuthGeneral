@@ -1,73 +1,76 @@
 <?php
 /**
- * Summary for AuthGeneralController Test Case
+ * AuthGeneralControllerのテスト
+ *
+ * @author Jun Nishikawa <topaz2@m0n0m0n0.com>
+ * @author Shohei Nakajima <nakajimashouhei@gmail.com>
+ * @link http://www.netcommons.org NetCommons Project
+ * @license http://www.netcommons.org/license.txt NetCommons License
+ * @copyright Copyright 2014, NetCommons Project
  */
 
 App::uses('AuthGeneralController', 'Controller');
 App::uses('AuthComponent', 'Controller/Component');
-App::uses('YAControllerTestCase', 'NetCommons.TestSuite');
+App::uses('NetCommonsControllerTestCase', 'NetCommons.TestSuite');
+App::uses('Role', 'Roles.Model');
 
 /**
- * AuthGeneralController Test Case
+ * AuthGeneralControllerのテスト
  *
- * @author   Jun Nishikawa <topaz2@m0n0m0n0.com>
- * @link     http://www.netcommons.org NetCommons Project
- * @license  http://www.netcommons.org/license.txt NetCommons License
+ * @author Jun Nishikawa <topaz2@m0n0m0n0.com>
+ * @author Shohei Nakajima <nakajimashouhei@gmail.com>
+ * @package NetCommons\AuthGeneral\Test\Case\Controller
  */
-class AuthGeneralControllerTest extends YAControllerTestCase {
+class AuthGeneralControllerTest extends NetCommonsControllerTestCase {
 
 /**
  * Fixtures
  *
- * @author   Jun Nishikawa <topaz2@m0n0m0n0.com>
- * @var      array
+ * @var array
  */
 	public $fixtures = array();
 
 /**
+ * Plugin name
+ *
+ * @var array
+ */
+	public $plugin = 'auth_general';
+
+/**
+ * Controller name
+ *
+ * @var string
+ */
+	protected $_controller = 'auth_general';
+
+/**
  * setUp
  *
- * @author   Jun Nishikawa <topaz2@m0n0m0n0.com>
- * @return   void
+ * @return void
  */
 	public function setUp() {
 		parent::setUp();
-		$this->generate('AuthGeneral.AuthGeneral', array(
-			'components' => array(
-				'Auth' => array('user'),
-				'Session',
-			),
-		));
+		$this->generateNc('AuthGeneral.AuthGeneral');
+
 		$this->controller->plugin = 'AuthGeneral';
 		$this->controller->Auth
 			->staticExpects($this->any())
 			->method('user')
-			->will($this->returnCallback(array($this, 'authUserCallback')));
+			->will($this->returnCallback(function ($key = null) {
+				$role = Role::ROOM_ROLE_KEY_ROOM_ADMINISTRATOR;
+				if (isset(TestAuthGeneral::$roles[$role][$key])) {
+					return TestAuthGeneral::$roles[$role][$key];
+				} else {
+					return TestAuthGeneral::$roles[$role];
+				}
+			}));
 	}
 
 /**
- * authUserCallback
+ * ログイン表示のテスト
  *
- * @author   Jun Nishikawa <topaz2@m0n0m0n0.com>
- * @param    int $key
- * @return   mixed
- */
-	public function authUserCallback($key) {
-		$auth = array(
-			'id' => 1,
-			'username' => 'admin',
-		);
-		if (empty($key) || !isset($auth[$key])) {
-			return $auth;
-		}
-		return $auth[$key];
-	}
-
-/**
- * testIndex action
- *
- * @author   Jun Nishikawa <topaz2@m0n0m0n0.com>
- * @return   void
+ * @return void
  */
 	public function testIndex() {
 		$this->testAction('/auth/index');
@@ -75,14 +78,13 @@ class AuthGeneralControllerTest extends YAControllerTestCase {
 	}
 
 /**
- * testLogin action
+ * ログインのテスト
  *
- * @author   Jun Nishikawa <topaz2@m0n0m0n0.com>
- * @return   void
+ * @return void
  */
 	public function testLogin() {
 		$this->testAction('/auth_general/auth_general/login', array(
-			'method' => 'POST',
+			'method' => 'post',
 			'data' => array(
 				'User' => array(
 					'username' => 'admin',
@@ -94,23 +96,22 @@ class AuthGeneralControllerTest extends YAControllerTestCase {
 	}
 
 /**
- * testLogout action
+ * ログアウトのテスト
  *
- * @author   Jun Nishikawa <topaz2@m0n0m0n0.com>
- * @return   void
+ * @return void
  */
 	public function testLogout() {
 		$this->testLogin();
 
 		$this->testAction('/auth_general/auth_general/logout', array(
-			'data' => array(
-			),
+			'data' => array(),
 		));
 		$this->assertEqual(null, CakeSession::read('Auth.User'));
 	}
 
 /**
  * Call logout action
+ * 後で削除
  *
  * @param CakeTestCase $test CakeTestCase instance
  * @return void
