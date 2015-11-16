@@ -2,8 +2,8 @@
 <phpunit bootstrap="vendors/autoload.php">
     <filter>
         <whitelist addUncoveredFilesFromWhitelist="true">
-            <directory suffix=".ctp">app/Plugin/AuthGeneral</directory>
-            <directory suffix=".php">app/Plugin/AuthGeneral</directory>
+    <directory suffix=".ctp">app/Plugin/AuthGeneral</directory>
+    <directory suffix=".php">app/Plugin/AuthGeneral</directory>
 			<exclude>
 				<directory suffix=".php">app/Plugin/AuthGeneral/Config/Migration</directory>
 				<directory suffix=".php">app/Plugin/AuthGeneral/Config/Schema</directory>
