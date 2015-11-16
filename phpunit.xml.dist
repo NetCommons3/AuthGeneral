@@ -2,15 +2,15 @@
 <phpunit bootstrap="vendors/autoload.php">
     <filter>
         <whitelist addUncoveredFilesFromWhitelist="true">
-    <directory suffix=".ctp">app/Plugin/AuthGeneral</directory>
-    <directory suffix=".php">app/Plugin/AuthGeneral</directory>
-			<exclude>
-				<directory suffix=".php">app/Plugin/AuthGeneral/Config/Migration</directory>
-				<directory suffix=".php">app/Plugin/AuthGeneral/Config/Schema</directory>
-				<directory suffix=".php">app/Plugin/AuthGeneral/Test/Case</directory>
-				<directory suffix=".php">app/Plugin/AuthGeneral/Test/Fixture</directory>
-				<directory suffix=".php">app/Plugin/AuthGeneral/TestSuite</directory>
-			</exclude>
+            <directory suffix=".ctp">app/Plugin/AuthGeneral</directory>
+            <directory suffix=".php">app/Plugin/AuthGeneral</directory>
+            <exclude>
+                <directory suffix=".php">app/Plugin/AuthGeneral/Config/Migration</directory>
+                <directory suffix=".php">app/Plugin/AuthGeneral/Config/Schema</directory>
+                <directory suffix=".php">app/Plugin/AuthGeneral/Test/Case</directory>
+                <directory suffix=".php">app/Plugin/AuthGeneral/Test/Fixture</directory>
+                <directory suffix=".php">app/Plugin/AuthGeneral/TestSuite</directory>
+            </exclude>
         </whitelist>
     </filter>
     <logging>
