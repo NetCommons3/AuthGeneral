@@ -8,9 +8,8 @@
  * @copyright Copyright 2014, NetCommons Project
  */
 
-App::uses('Role', 'Roles.Model');
 App::uses('AuthComponent', 'Controller/Component');
-App::uses('NetCommonsControllerTestCase', 'NetCommons.TestSuite');
+App::uses('Role', 'Roles.Model');
 
 /**
  * TestAuthGeneral
