@@ -10,6 +10,7 @@
 
 App::uses('AuthComponent', 'Controller/Component');
 App::uses('Role', 'Roles.Model');
+App::uses('UserRole', 'UserRoles.Model');
 
 /**
  * TestAuthGeneral
@@ -60,6 +61,27 @@ class TestAuthGeneral {
 			'password' => 'visitor',
 			'role_key' => 'common_user',
 			'handlename' => 'visitor of admin'
+		],
+		UserRole::USER_ROLE_KEY_SYSTEM_ADMINISTRATOR => [
+			'id' => 1,
+			'username' => 'admin',
+			'password' => 'admin',
+			'role_key' => 'system_administrator',
+			'handlename' => 'handle of admin'
+		],
+		UserRole::USER_ROLE_KEY_ADMINISTRATOR => [
+			'id' => 2,
+			'username' => 'chief_editor',
+			'password' => 'chief_editor',
+			'role_key' => 'administrator',
+			'handlename' => 'chief_editor of admin'
+		],
+		UserRole::USER_ROLE_KEY_COMMON_USER => [
+			'id' => 4,
+			'username' => 'general_user',
+			'password' => 'general_user',
+			'role_key' => 'common_user',
+			'handlename' => 'general_user of admin'
 		],
 	];
 
