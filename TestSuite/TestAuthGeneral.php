@@ -28,56 +28,56 @@ class TestAuthGeneral {
  */
 	public static $roles = [
 		Role::ROOM_ROLE_KEY_ROOM_ADMINISTRATOR => [
-			'id' => 1,
+			'id' => '1',
 			'username' => 'admin',
 			'password' => 'admin',
 			'role_key' => 'system_administrator',
 			'handlename' => 'handle of admin'
 		],
 		Role::ROOM_ROLE_KEY_CHIEF_EDITOR => [
-			'id' => 2,
+			'id' => '2',
 			'username' => 'chief_editor',
 			'password' => 'chief_editor',
 			'role_key' => 'administrator',
 			'handlename' => 'chief_editor of admin'
 		],
 		Role::ROOM_ROLE_KEY_EDITOR => [
-			'id' => 3,
+			'id' => '3',
 			'username' => 'editor',
 			'password' => 'editor',
 			'role_key' => 'common_user',
 			'handlename' => 'editor of admin'
 		],
 		Role::ROOM_ROLE_KEY_GENERAL_USER => [
-			'id' => 4,
+			'id' => '4',
 			'username' => 'general_user',
 			'password' => 'general_user',
 			'role_key' => 'common_user',
 			'handlename' => 'general_user of admin'
 		],
 		Role::ROOM_ROLE_KEY_VISITOR => [
-			'id' => 5,
+			'id' => '5',
 			'username' => 'visitor',
 			'password' => 'visitor',
 			'role_key' => 'common_user',
 			'handlename' => 'visitor of admin'
 		],
 		UserRole::USER_ROLE_KEY_SYSTEM_ADMINISTRATOR => [
-			'id' => 1,
+			'id' => '1',
 			'username' => 'admin',
 			'password' => 'admin',
 			'role_key' => 'system_administrator',
 			'handlename' => 'handle of admin'
 		],
 		UserRole::USER_ROLE_KEY_ADMINISTRATOR => [
-			'id' => 2,
+			'id' => '2',
 			'username' => 'chief_editor',
 			'password' => 'chief_editor',
 			'role_key' => 'administrator',
 			'handlename' => 'chief_editor of admin'
 		],
 		UserRole::USER_ROLE_KEY_COMMON_USER => [
-			'id' => 4,
+			'id' => '4',
 			'username' => 'general_user',
 			'password' => 'general_user',
 			'role_key' => 'common_user',
