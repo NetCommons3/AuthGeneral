@@ -32,7 +32,8 @@ class TestAuthGeneral {
 			'username' => 'admin',
 			'password' => 'admin',
 			'role_key' => 'system_administrator',
-			'handlename' => 'handle of admin'
+			'handlename' => 'handle of admin',
+			'email' => 'system_admin@exapmle.com',
 		],
 		Role::ROOM_ROLE_KEY_CHIEF_EDITOR => [
 			'id' => '2',
