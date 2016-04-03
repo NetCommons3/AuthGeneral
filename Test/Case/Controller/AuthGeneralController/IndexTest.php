@@ -47,6 +47,6 @@ class AuthGeneralControllerIndexTest extends NetCommonsControllerTestCase {
  */
 	public function testIndex() {
 		$this->testAction('/auth_general/auth_general/index');
-		$this->assertEqual($this->headers['Location'], Router::url('/auth/login', true));
+		$this->assertTextContains('/auth/login', $this->headers['Location']);
 	}
 }
