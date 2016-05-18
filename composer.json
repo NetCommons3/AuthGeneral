@@ -21,8 +21,8 @@
         "netcommons/net-commons":       "dev-master",
         "netcommons/roles":             "dev-master",
         "netcommons/user-roles":        "dev-master"
-    },		
-    "config": {		
-        "vendor-dir": "vendors"	
+    },
+    "config": {
+        "vendor-dir": "vendors"
     }
 }
