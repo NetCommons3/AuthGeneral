@@ -24,7 +24,5 @@
     },
     "config": {
         "vendor-dir": "vendors"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
