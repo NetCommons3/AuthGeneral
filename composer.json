@@ -17,10 +17,10 @@
         }
     },
     "require": {
-        "netcommons/auth":              "dev-master",
-        "netcommons/net-commons":       "dev-master",
-        "netcommons/roles":             "dev-master",
-        "netcommons/user-roles":        "dev-master"
+        "netcommons/auth":              "@dev",
+        "netcommons/net-commons":       "@dev",
+        "netcommons/roles":             "@dev",
+        "netcommons/user-roles":        "@dev"
     },
     "config": {
         "vendor-dir": "vendors"
