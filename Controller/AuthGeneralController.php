@@ -19,4 +19,13 @@ App::uses('AuthGeneralAppController', 'AuthGeneral.Controller');
  */
 class AuthGeneralController extends AuthGeneralAppController {
 
+/**
+ * ログイン処理
+ *
+ * @return void
+ **/
+	public function login() {
+		$this->view = 'Auth.Auth/login';
+		parent::login();
+	}
 }
