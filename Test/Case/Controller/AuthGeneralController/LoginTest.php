@@ -10,6 +10,7 @@
  */
 
 App::uses('NetCommonsControllerTestCase', 'NetCommons.TestSuite');
+App::uses('TestAuthGeneral', 'AuthGeneral.TestSuite');
 
 /**
  * AuthGeneralController::login()のテスト
@@ -46,16 +47,23 @@ class AuthGeneralControllerLoginTest extends NetCommonsControllerTestCase {
  * @return void
  */
 	protected function _mockLoggedIn() {
+		$this->generateNc(Inflector::camelize($this->_controller),
+			array(
+				'components' => array(
+					'Auth' => array('login'),
+				),
+				'uses' => array(
+					'Users.User' => array('updateLoginTime'),
+				)
+			)
+		);
+
 		$this->controller->Auth
-			->staticExpects($this->any())
-			->method('user')
-			->will($this->returnCallback(function ($key = null) {
-				$role = Role::ROOM_ROLE_KEY_ROOM_ADMINISTRATOR;
-				if (isset(TestAuthGeneral::$roles[$role][$key])) {
-					return TestAuthGeneral::$roles[$role][$key];
-				} else {
-					return TestAuthGeneral::$roles[$role];
-				}
+			->expects($this->once())
+			->method('login')
+			->will($this->returnCallback(function () {
+				TestAuthGeneral::login($this);
+				return true;
 			}));
 	}
 
