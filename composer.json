@@ -23,8 +23,8 @@
         }
     },
     "require": {
-        "netcommons/auth": "@dev",
-        "netcommons/net-commons": "@dev",
+        "netcommons/auth": "dev-availability",
+        "netcommons/net-commons": "dev-availability",
         "netcommons/roles": "@dev",
         "netcommons/user-roles": "@dev"
     },
